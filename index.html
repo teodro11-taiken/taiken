@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taiken.ro | Încearcă Kendo</title>
+<meta name="description" content="Taiken Kendo Club Cluj - Încearcă Kendo. Respect. Focus. Curaj.">
+<style>
+:root {
+  --navy:#071f36;
+  --navy2:#0f3152;
+  --gold:#f0c24c;
+  --bg:#f7f8fb;
+  --text:#1f2937;
+  --muted:#64748b;
+  --card:#ffffff;
+  --line:#e5e7eb;
+  --shadow:0 18px 44px rgba(7,31,54,.10);
+  --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1180px,calc(100% - 32px));margin:0 auto}
+header{position:sticky;top:0;z-index:50;background:rgba(247,248,251,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(229,231,235,.9)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.brand img{width:42px;height:42px;border-radius:999px;box-shadow:0 8px 22px rgba(7,31,54,.2)}
+.nav-links{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--muted);font-weight:700}
+.nav-links a:hover{color:var(--navy)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.2s ease;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--gold);color:var(--navy);box-shadow:0 12px 28px rgba(240,194,76,.3)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+.btn-light{background:#fff;color:var(--navy);box-shadow:0 8px 22px rgba(7,31,54,.08)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(rgba(7,31,54,.72),rgba(7,31,54,.72)), url('assets/hero.webp') center/cover no-repeat;color:#fff}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at top left, rgba(240,194,76,.16), transparent 34%), radial-gradient(circle at bottom right, rgba(255,255,255,.08), transparent 28%)}
+.hero-inner{position:relative;z-index:1;min-height:calc(100vh - 74px);display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:42px;padding:70px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.09em}
+.dot{width:8px;height:8px;border-radius:999px;background:var(--gold);box-shadow:0 0 0 4px rgba(240,194,76,.18)}
+.hero-logo{width:88px;height:88px;border-radius:999px;margin-bottom:22px;box-shadow:0 18px 42px rgba(0,0,0,.25)}
+h1,h2,h3{margin:0;line-height:1.08}
+h1{font-size:clamp(48px,8vw,92px);letter-spacing:-.06em;max-width:760px}
+.hero-sub{margin:18px 0 0;font-size:clamp(22px,3vw,32px);font-weight:900;color:var(--gold);letter-spacing:-.02em}
+.hero-copy{max-width:700px;margin:20px 0 0;font-size:19px;color:rgba(255,255,255,.88)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.hero-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.hero-card h3{font-size:26px;margin-bottom:14px}
+.hero-card p{margin:0 0 16px;color:rgba(255,255,255,.82)}
+.quick-list{display:grid;gap:12px}
+.quick-item{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:18px;background:rgba(255,255,255,.08)}
+.quick-item strong{display:block;color:#fff}
+.quick-item span{color:rgba(255,255,255,.8);font-size:14px}
+.qicon{width:28px;height:28px;border-radius:999px;display:grid;place-items:center;flex:0 0 28px;background:rgba(240,194,76,.2);color:var(--gold);font-weight:900}
+section{padding:84px 0}
+.section-head{max-width:780px;margin-bottom:34px}
+.kicker{margin-bottom:10px;color:#2c6ed5;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:clamp(34px,5vw,56px);color:var(--navy);letter-spacing:-.045em}
+.section-copy{margin:16px 0 0;color:var(--muted);font-size:18px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 12px 30px rgba(7,31,54,.055)}
+.card-no{width:42px;height:42px;border-radius:999px;display:grid;place-items:center;background:#e8f0ff;color:#2c6ed5;font-weight:900;margin-bottom:18px}
+.card h3{font-size:24px;color:var(--navy);margin-bottom:10px}
+.card p{margin:0;color:var(--muted)}
+.schedule-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.schedule-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;text-align:center;box-shadow:0 12px 30px rgba(7,31,54,.055)}
+.schedule-card strong{display:block;color:var(--navy);font-size:24px;margin-bottom:6px}
+.schedule-card span{color:#2c6ed5;font-size:22px;font-weight:900}
+.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:start}
+.quote-box{padding:30px;border-radius:var(--radius);background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;box-shadow:var(--shadow)}
+.quote-box p{margin:0;font-size:26px;font-weight:850;line-height:1.24;letter-spacing:-.02em}
+.quote-box small{display:block;margin-top:16px;color:rgba(255,255,255,.74);font-size:15px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 30px rgba(7,31,54,.055)}
+.panel-title{padding:22px 26px;background:var(--navy);color:#fff;font-size:22px;font-weight:900}
+.timeline-row{display:grid;grid-template-columns:90px 1fr;gap:18px;padding:20px 26px;border-bottom:1px solid var(--line)}
+.timeline-row:last-child{border-bottom:none}
+.time{color:#2c6ed5;font-weight:900}
+.timeline-row strong{color:var(--navy)}
+.timeline-row p{margin:4px 0 0;color:var(--muted)}
+.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.photo-frame{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.photo-frame img{width:100%;height:auto;display:block}
+.photo-caption{padding:16px 20px;background:#fff;color:var(--muted);font-size:15px}
+.photo-caption strong{color:var(--navy)}
+.action-bottom{padding-top:28px}
+.action-bottom .photo-frame img{max-height:620px;object-fit:cover;width:100%}
+
+.location-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:stretch}
+.location-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 12px 30px rgba(7,31,54,.055)}
+.location-card h3{color:var(--navy);font-size:26px;margin-bottom:14px}
+.location-card p{margin:0 0 14px;color:var(--muted)}
+.location-list{display:grid;gap:12px;margin:22px 0}
+.location-list div{padding:14px;border-radius:16px;background:#e8f0ff;color:var(--navy);font-weight:800}
+.map-frame{position:relative;min-height:430px;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.map-frame iframe{width:100%;height:100%;min-height:430px;border:0;display:block}
+.map-arrow{position:absolute;left:52%;top:56%;transform:translate(-50%,-100%);z-index:2;padding:10px 14px;border-radius:999px;color:var(--navy);background:var(--gold);font-size:13px;font-weight:900;box-shadow:0 12px 28px rgba(0,0,0,.25);white-space:nowrap;pointer-events:none}
+.map-arrow:after{content:"";position:absolute;left:50%;top:100%;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:26px solid var(--gold)}
+
+.cta{background:var(--navy);color:#fff}
+.cta-inner{display:grid;grid-template-columns:1fr 360px;gap:34px;align-items:center}
+.cta h2{color:#fff}
+.cta p{font-size:19px;color:rgba(255,255,255,.8)}
+.signup-card{background:#fff;color:var(--text);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.signup-card h3{color:var(--navy);font-size:24px;margin-bottom:10px}
+.signup-card p{margin:0 0 18px;color:var(--muted)}
+.signup-card .btn{width:100%}
+.contact-line{margin-top:14px;color:var(--muted);font-size:14px;text-align:center}
+.contact-line a{color:var(--navy)}
+.qr-wrap{display:flex;justify-content:center;margin-top:18px}
+.qr-wrap img{width:130px;height:130px;border-radius:16px;box-shadow:0 8px 20px rgba(7,31,54,.08)}
+.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+details{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:0 8px 22px rgba(7,31,54,.05)}
+summary{cursor:pointer;color:var(--navy);font-weight:900;font-size:18px}
+details p{margin:12px 0 0;color:var(--muted)}
+footer{padding:30px 0;background:#03111f;color:rgba(255,255,255,.72)}
+.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px}
+@media (max-width:960px){
+  .nav-links{display:none}
+  .hero-inner,.split,.cta-inner,.gallery-grid,.location-grid{grid-template-columns:1fr}
+  .cards,.schedule-grid,.faq{grid-template-columns:1fr}
+  .hero-inner{min-height:auto;padding:60px 0}
+}
+@media (max-width:560px){
+  .container{width:min(100% - 22px,1180px)}
+  .btn{width:100%}
+  .hero-actions{flex-direction:column}
+  section{padding:64px 0}
+  .timeline-row{grid-template-columns:1fr;gap:8px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="Logo Taiken"><span>Taiken.ro</span></a>
+    <nav class="nav-links" aria-label="Navigație principală">
+      <a href="#ce-este">Ce este kendo</a>
+      <a href="#program">Program</a>
+      <a href="#locatie">Locație</a>
+      <a href="#beneficii">Beneficii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#open-dojo">Open Dojo</a>
+      <a href="#intrebari">Întrebări</a>
+    </nav>
+    <a class="btn btn-light" href="#open-dojo">Vreau să încerc</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <img class="hero-logo" src="assets/logo.png" alt="Logo Taiken">
+        <div class="eyebrow"><span class="dot"></span>Kendo în Cluj</div>
+        <h1>Încearcă Kendo</h1>
+        <p class="hero-sub">Respect. Focus. Curaj.</p>
+        <p class="hero-copy">Un sport japonez modern cu sabie de bambus, armură, disciplină și energie. Vino să descoperi kendo într-o sesiune introductivă și într-o comunitate care pune accent pe respect, concentrare și progres real.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#open-dojo">Scrie-ne pe WhatsApp</a>
+          <a class="btn btn-outline" href="#ce-este">Află mai multe</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h3>Ce găsești la Taiken</h3>
+        <p>Un dojo în care poți începe de la zero, într-un ritm clar, serios și prietenos.</p>
+        <div class="quick-list">
+          <div class="quick-item"><div class="qicon">1</div><div><strong>Antrenamente regulate</strong><span>Luni, marți și joi, între 19:00 și 21:00.</span></div></div>
+          <div class="quick-item"><div class="qicon">2</div><div><strong>Atmosferă bună</strong><span>Practică serioasă, dar deschisă pentru începători și curioși.</span></div></div>
+          <div class="quick-item"><div class="qicon">3</div><div><strong>Valori clare</strong><span>Respect, focus, autocontrol și curaj în practică.</span></div></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="ce-este">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Pe scurt</div>
+        <h2>Kendo nu este despre agresivitate. Este despre autocontrol.</h2>
+        <p class="section-copy">În kendo înveți să îți coordonezi corpul, respirația, atenția și energia. Este o practică intensă, dar construită pe respect, disciplină și siguranță. Fiecare antrenament îți cere să fii prezent, atent și sincer cu tine însuți.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="card-no">01</div><h3>Respect</h3><p>Fiecare exercițiu începe și se termină cu salut. Partenerul de antrenament nu este doar un adversar, ci omul care te ajută să progresezi.</p></article>
+        <article class="card"><div class="card-no">02</div><h3>Focus</h3><p>Respirația, postura, ritmul și distanța cer concentrare continuă. Kendo te scoate din rutină și te obligă să fii aici și acum.</p></article>
+        <article class="card"><div class="card-no">03</div><h3>Curaj</h3><p>Înveți să intri în acțiune cu hotărâre, dar fără agresivitate. Kendo dezvoltă încrederea, controlul emoției și claritatea deciziei.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="program">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Program antrenamente</div>
+        <h2>Ne antrenăm de trei ori pe săptămână</h2>
+        <p class="section-copy">Pentru primul antrenament sunt suficiente haine comode de sport și curiozitate. Vino să vezi atmosfera, ritmul și comunitatea.</p>
+      </div>
+      <div class="schedule-grid">
+        <div class="schedule-card"><strong>Luni</strong><span>19:00–21:00</span></div>
+        <div class="schedule-card"><strong>Marți</strong><span>19:00–21:00</span></div>
+        <div class="schedule-card"><strong>Joi</strong><span>19:00–21:00</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="locatie">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Locație</div>
+        <h2>Unde au loc antrenamentele</h2>
+        <p class="section-copy">Antrenamentele Taiken au loc la sala de sport a Liceului Teoretic „Nicolae Bălcescu”, în zona centrală a Clujului.</p>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-card">
+          <h3>Sala de sport a Liceului „Nicolae Bălcescu”</h3>
+          <p><strong>Adresă:</strong> Strada Constanța nr. 6, Cluj-Napoca</p>
+          <p><strong>Reper important:</strong> intrarea spre sala de sport este pe partea cu Inspectoratul Școlar Județean Cluj.</p>
+
+          <div class="location-list">
+            <div>Program: luni, marți și joi, 19:00–21:00</div>
+            <div>Vino cu haine comode de sport</div>
+            <div>Scrie-ne pe WhatsApp înainte de primul antrenament</div>
+          </div>
+
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Liceul%20Teoretic%20Nicolae%20Balcescu%20Strada%20Constanta%206%20Cluj-Napoca" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+
+        <div class="map-frame" aria-label="Hartă către sala de sport a Liceului Nicolae Bălcescu">
+          <iframe
+            title="Hartă Liceul Nicolae Bălcescu Cluj-Napoca"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Liceul%20Teoretic%20Nicolae%20Balcescu%20Strada%20Constanta%206%20Cluj-Napoca&output=embed">
+          </iframe>
+          <div class="map-arrow">Intrare sală – partea cu ISJ Cluj</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="beneficii">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Energie & beneficii</div>
+        <h2>De ce merită să încerci kendo</h2>
+        <p class="section-copy">Kendo are o energie specială: ritmul pașilor pe podea, sunetul shinai-ului, atenția din privire și curajul de a intra în acțiune. Nu este un sport al agresivității, ci un antrenament al prezenței, al autocontrolului și al respectului față de celălalt.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="card-no">01</div><h3>Energie controlată</h3><p>Kendo te scoate din rutină și îți cere să fii prezent cu tot corpul. Înveți să transformi emoția, tensiunea și adrenalina în mișcare clară și controlată.</p></article>
+        <article class="card"><div class="card-no">02</div><h3>Minte mai limpede</h3><p>În timpul antrenamentului nu poți fi pe pilot automat. Respirația, postura, distanța și reacția cer concentrare, iar acest lucru ajută la disciplină și focus.</p></article>
+        <article class="card"><div class="card-no">03</div><h3>Încredere și curaj</h3><p>Fiecare antrenament te pune în fața unei mici provocări. Înveți să nu fugi de emoție, ci să mergi înainte cu respect, calm și hotărâre.</p></article>
+      </div>
+      <div class="split" style="margin-top:28px">
+        <div class="quote-box">
+          <p>„Kendo este energia care te obligă să fii aici și acum.”</p>
+          <small>Un antrenament în care corpul, respirația, atenția și spiritul lucrează împreună.</small>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Ce câștigi practic</div>
+          <div class="timeline-row"><div class="time">Corp</div><div><strong>Postură, coordonare și mobilitate</strong><p>Lucrezi picioarele, trunchiul, brațele și respirația într-un mod dinamic, fără să fie nevoie de aparate sau greutăți.</p></div></div>
+          <div class="timeline-row"><div class="time">Minte</div><div><strong>Focus și răbdare</strong><p>Kendo te învață să asculți, să repeți, să corectezi și să progresezi pas cu pas, fără grabă și fără ego.</p></div></div>
+          <div class="timeline-row"><div class="time">Spirit</div><div><strong>Respect și autocontrol</strong><p>Ritualul salutului, lucrul cu partenerul și disciplina dojo-ului creează o atmosferă serioasă, dar prietenoasă.</p></div></div>
+          <div class="timeline-row"><div class="time">Grup</div><div><strong>Comunitate</strong><p>Te antrenezi alături de oameni diferiți, dar uniți de aceeași idee: să devină mai buni prin practică constantă.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Comunitate</div>
+        <h2>Un dojo în care înveți alături de oameni reali</h2>
+        <p class="section-copy">Taiken înseamnă mai mult decât tehnică. Înseamnă disciplină, energie și sprijin între colegi, indiferent dacă ești la primul pas sau practici de mai mult timp.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="photo-frame">
+          <img src="assets/photo1.jpg" alt="Echipa Taiken după antrenament">
+          <figcaption class="photo-caption"><strong>Taiken Kendo Club</strong> — antrenamente regulate, atmosferă prietenoasă și respect pentru ritmul fiecărui începător.</figcaption>
+        </figure>
+        <figure class="photo-frame">
+          <img src="assets/photo2.jpg" alt="Detaliu cu shinai și echipament Taiken">
+          <figcaption class="photo-caption"><strong>Shinai</strong> — sabia de bambus folosită în kendo, primul obiect pe care îl vei învăța la antrenament.</figcaption>
+        </figure>
+      </div>
+      <div class="action-bottom">
+        <figure class="photo-frame">
+          <img src="assets/hero.webp" alt="Moment de kendo în sală">
+          <figcaption class="photo-caption"><strong>Acțiune</strong> — concentrare, viteză, control și energie într-un moment de kendo.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="open-dojo" class="cta">
+    <div class="container cta-inner">
+      <div>
+        <div class="kicker" style="color:var(--gold)">Antrenament introductiv</div>
+        <h2>Kendo Open Dojo</h2>
+        <p>Vino la un antrenament pentru începători. Nu ai nevoie de experiență sau echipament special. Antrenamentele au loc luni, marți și joi, între 19:00 și 21:00, la sala de sport a Liceului Teoretic „Nicolae Bălcescu”, Strada Constanța nr. 6.</p>
+        <p>Scrie-ne pe WhatsApp sau pe e-mail și îți trimitem detaliile pentru primul antrenament.</p>
+      </div>
+      <div class="signup-card">
+        <h3>Vreau să încerc</h3>
+        <p>Te așteptăm la Taiken. Dacă ai întrebări, ne poți contacta direct.</p>
+        <a class="btn btn-primary" href="https://wa.me/40762295274" target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+        <div class="contact-line">
+          WhatsApp: <a href="https://wa.me/40762295274" target="_blank" rel="noopener"><strong>0762 295 274</strong></a><br>
+          E-mail: <a href="mailto:contact@taiken.ro"><strong>contact@taiken.ro</strong></a>
+        </div>
+        <div class="qr-wrap"><img src="assets/qr.png" alt="QR către Taiken.ro"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="intrebari">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Întrebări rapide</div>
+        <h2>Ce trebuie să știi înainte să vii</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Trebuie să fi practicat arte marțiale?</summary><p>Nu. Sesiunea și primul contact cu dojo-ul sunt gândite pentru începători și pornesc de la mișcări simple.</p></details>
+        <details><summary>Am nevoie de echipament?</summary><p>Nu pentru primul antrenament. Sunt suficiente haine comode de sport. Restul se explică ulterior.</p></details>
+        <details><summary>Este potrivit pentru copii?</summary><p>Da, cu acordul părinților și în funcție de vârstă. Accentul cade pe disciplină, coordonare, respect și siguranță.</p></details>
+        <details><summary>Este kendo un sport dur?</summary><p>Este un sport intens, dar controlat. Începătorii lucrează gradual și sub îndrumarea instructorilor.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Taiken.ro · Încearcă Kendo</div>
+    <div><a href="#top">Sus ↑</a></div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
